@@ -5,3 +5,4 @@ SETUVAR --export MANROFFOPT:\x2dc
 SETUVAR __done_min_cmd_duration:10000
 SETUVAR __done_notification_urgency_level:low
 SETUVAR __fish_initialized:4300
+SETUVAR fish_features:no\x2dquery\x2dterm

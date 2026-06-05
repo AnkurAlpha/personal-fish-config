@@ -4,6 +4,10 @@ set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x SHELL /usr/bin/fish
 
+# for making it compatible with zellij
+contains -- no-query-term $fish_features; or set -Ua fish_features no-query-term
+# if not used then it may show some annoying lag while being used with zellij
+
 # Use bat for man pages
 set -xU MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -xU MANROFFOPT "-c"
@@ -120,8 +124,8 @@ alias l. 'eza -ald --color=always --group-directories-first --icons .*' # show o
 
 # Replace some more things with better alternatives
 abbr cat 'bat'
-abbr ls 'ls | bat'
-abbr lt 'lt | bat'
+# abbr ls 'ls | bat'
+# abbr lt 'lt | bat'
 if not test -x /usr/bin/yay; and test -x /usr/bin/paru
     alias yay 'paru'
 end
